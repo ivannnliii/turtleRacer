@@ -37,7 +37,7 @@ def race(colors):
                 winner_turtle.hideturtle()
                 winner_turtle.penup()
                 winner_turtle.setpos(0, 0)
-                winner_turtle.write("Winner: {}".format(winner_color), align="center", font=("Arial", 24, "bold"))
+                winner_turtle.write("Winner: {} Turtle!".format(winner_color), align="center", font=("Arial", 24, "bold"))
                 time.sleep(5)
                 return winner_color
 
@@ -57,10 +57,26 @@ def create_turtles(colors):
 
     return turtles
 
+
 def init_turtle():
     screen = turtle.Screen()
     screen.setup(WIDTH, HEIGHT)
     screen.title("Turtle Racer")
+
+    # Add countdown timer
+    countdown_turtle = turtle.Turtle()
+    countdown_turtle.hideturtle()
+    countdown_turtle.penup()
+    countdown_turtle.setpos(0, 0)
+    countdown_turtle.write("3", align="center", font=("Arial", 48, "bold"))
+    time.sleep(1)
+    countdown_turtle.clear()
+    countdown_turtle.write("2", align="center", font=("Arial", 48, "bold"))
+    time.sleep(1)
+    countdown_turtle.clear()
+    countdown_turtle.write("1", align="center", font=("Arial", 48, "bold"))
+    time.sleep(1)
+    countdown_turtle.clear()
 
 
 racers = get_number_of_racers()
